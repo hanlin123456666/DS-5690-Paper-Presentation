@@ -43,7 +43,8 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 ### Summary of the model
 ![image](https://github.com/user-attachments/assets/6b030b7d-fa63-4c63-b64e-762c94e7afe1)
 
-## Experiments 
+## Experiments
+### 1. Datasets and Details 
    - Datasets: 2 collected real-world datasets for LSTF and 2 public benchmark datasets.
      1. ETT(Electricity Transformer Temperature): 2 stations, 2 years, every 15 minutes. Train/Val/Test is 1st year/ 4 months/ 8 months. 
      2. ECL(Electricity Consuming Load): 1 country, 2 years, every 1 hour. Train/Val/Test is 15 months/ 3 months/ 6 months. 
@@ -59,8 +60,9 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
      
      - **Benchmarking Emissions**: Include energy usage and environmental impact in model evaluations, and encourage training in carbon-friendly regions.
 
-### 2. Bias in Training Data
-   - **Problem**: Massive LLMs often rely on vast datasets scraped from the internet, containing uncurated data that amplifies **hegemonic viewpoints** and harmful stereotypes, especially those targeting marginalized groups.
+### 2. Results and Analysis
+   - Univariate Time-series Forecasting:
+     1. The informer greatly improves the inference performance. 
    - **Impact**: These biases manifest as discriminatory language or ideologies within model outputs, reinforcing harmful stereotypes and causing social harm.
    - **Recommendations**:
      - **Data Curation and Documentation**: Collect smaller, curated datasets that are **representative and balanced**, reducing reliance on data from sources that overrepresent dominant perspectives.
