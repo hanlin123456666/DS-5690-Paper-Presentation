@@ -13,7 +13,7 @@ Sequence prediction: a problem that involves using historical sequence informati
 ![image](https://github.com/user-attachments/assets/f0d66cee-ef46-4fb0-a9d6-9297a68b2e20)
 - Problem 2. Long Sequence Input Learning (LSIL) refers to the task of processing and learning from long sequential data inputs, which is also challenging. It is not necessarily related to the LSTF problem but the literature tends to associate them.
 - While transformer models outperform RNNS in capturing long-range dependencies and reducing signal path length, their self-attention mechanism’s computational and memory complexity makes them resource-intensive and impractical for real-world LSTF applications!
-- ![image](https://github.com/user-attachments/assets/4018da60-e61d-406f-8d6c-859ba788a50d)
+![image](https://github.com/user-attachments/assets/4018da60-e61d-406f-8d6c-859ba788a50d)
 - Research questions: Can we improve Transformer models to be computation, memory, and architecture efficient, as well as maintain higher prediction capacity?
   
 ### Address the LSTF problem
@@ -25,7 +25,13 @@ Sequence prediction: a problem that involves using historical sequence informati
 - Generative Decoder
 
 ## Methodology
-### 
+Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when solving the LSTF problem:
+1. The quadratic computation of self-attention.
+2. The memory bottleneck in stacking layers for long inputs.
+3. The speed plunge in predicting long outputs.
+### ProbSparse self-attention mechanism
+### Self-Attention Distilling
+### Generative Decoder
 
 ### 1. Environmental and Financial Costs
    - **Problem**: Training large LLMs is resource-intensive, demanding substantial energy, which results in significant **carbon emissions**. For example, training a single large model can emit as much CO₂ as several transcontinental flights.
@@ -134,4 +140,5 @@ Sequence prediction: a problem that involves using historical sequence informati
 ## Citation
 
 Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell. (2021). *On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?* Conference on Fairness, Accountability, and Transparency (FAccT ’21). [DOI: 10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)
+vannilla transformer 
 
