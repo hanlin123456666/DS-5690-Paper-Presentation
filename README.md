@@ -9,21 +9,25 @@ Sequence prediction: a problem that involves using historical sequence informati
 ![image](https://github.com/user-attachments/assets/ac8210e8-2c07-4dc6-aa12-1ef647297895)
 
 ### Problem and Motivation
-- Problem 1. Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data tend to be vast, high-frequency, and span extended periods.
+- Problem 1. The challenge of Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data are always vast, high-frequency, and span extended periods.
 ![image](https://github.com/user-attachments/assets/f0d66cee-ef46-4fb0-a9d6-9297a68b2e20)
-- The drive for bigger models is propelled by performance gains, but this paper urges the NLP community to consider **potentially harmful consequences**—from environmental damage to social harm.
+- Problem 2. Long Sequence Input Learning (LSIL) refers to the task of processing and learning from long sequential data inputs, which is also challenging. It is not necessarily related to the LSTF problem but the literature tends to associate them. 
 
 ### Address the LSTF problem
-1. For long sequence input learning problem, the authors enhance
-2. For long seqeuence forcasting problem, the authors enhance the model's prediction capacity to have a more extended output. The most important thing is to capture the long term independencies between the long sequence output and the inputs. 
-   
+1. For addressing long sequence input learning problems, the authors enhance the model's ability to handle massive inputs. The most critical thing is to capture the long-term independencies among the long sequence inputs. 
+2. For addressing long sequence forecasting problem, the authors enhance the model's prediction capacity to have a more extended output. The most important thing is to capture the long-term independencies between the long sequence output and the inputs.
+In summary, the authors design an efficient transformer model for LSTF, named Informer, with three distinctive characteristics:
+- ProbSparse self-attention mechanism
+- Self-Attention Distilling
+- Generative Decoder
 ### Key Research Questions
 1. What risks are associated with LLMs' scale, from environmental costs to social implications?
 2. How can the field of NLP benefit from smaller, more efficient, and ethically guided models?
 
 ---
 
-## Section Summaries
+## Methodology
+### 
 
 ### 1. Environmental and Financial Costs
    - **Problem**: Training large LLMs is resource-intensive, demanding substantial energy, which results in significant **carbon emissions**. For example, training a single large model can emit as much CO₂ as several transcontinental flights.
