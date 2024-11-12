@@ -24,7 +24,6 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 - Generative Decoder
 
 ## Methodology
-![image](https://github.com/user-attachments/assets/0e67abe0-1608-4687-a318-9b368423c78c)
 Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when solving the LSTF problem:
 1. The quadratic computation of self-attention.
 2. The memory bottleneck in stacking layers for long inputs.
