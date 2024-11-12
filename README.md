@@ -8,23 +8,20 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 Sequence prediction: a problem that involves using historical sequence information sequence information to predict the next value or values in the sequence. 
 ![image](https://github.com/user-attachments/assets/ac8210e8-2c07-4dc6-aa12-1ef647297895)
 
-### Problem and Motivation
+### Problem and research questions
 - Problem 1. The challenge of Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data are always vast, high-frequency, and span extended periods.
 ![image](https://github.com/user-attachments/assets/f0d66cee-ef46-4fb0-a9d6-9297a68b2e20)
-- Problem 2. Long Sequence Input Learning (LSIL) refers to the task of processing and learning from long sequential data inputs, which is also challenging. It is not necessarily related to the LSTF problem but the literature tends to associate them. 
-
+- Problem 2. Long Sequence Input Learning (LSIL) refers to the task of processing and learning from long sequential data inputs, which is also challenging. It is not necessarily related to the LSTF problem but the literature tends to associate them.
+- While transformer models outperform RNNS in capturing long-range dependencies and reducing signal path length, their self-attention mechanism’s computational and memory complexity makes them resource-intensive and impractical for real-world LSTF applications!
+- Research questions: Can we improve Transformer models to be computation, memory, and architecture efficient, as well as maintain higher prediction capacity?
+  
 ### Address the LSTF problem
 1. For addressing long sequence input learning problems, the authors enhance the model's ability to handle massive inputs. The most critical thing is to capture the long-term independencies among the long sequence inputs. 
 2. For addressing long sequence forecasting problem, the authors enhance the model's prediction capacity to have a more extended output. The most important thing is to capture the long-term independencies between the long sequence output and the inputs.
-In summary, the authors design an efficient transformer model for LSTF, named Informer, with three distinctive characteristics:
+3. In summary, the authors design an efficient transformer model for LSTF, named Informer, with three distinctive characteristics:
 - ProbSparse self-attention mechanism
 - Self-Attention Distilling
 - Generative Decoder
-### Key Research Questions
-1. What risks are associated with LLMs' scale, from environmental costs to social implications?
-2. How can the field of NLP benefit from smaller, more efficient, and ethically guided models?
-
----
 
 ## Methodology
 ### 
