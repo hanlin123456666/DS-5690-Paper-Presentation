@@ -9,7 +9,8 @@ Sequence prediction: a problem that involves using historical sequence informati
 ![image](https://github.com/user-attachments/assets/ac8210e8-2c07-4dc6-aa12-1ef647297895)
 
 ### Problem and Motivation
-- Problem 1. Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. On the other hand, 
+- Problem 1. Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data tend to be vast, high-frequency, and span extended periods.
+![image](https://github.com/user-attachments/assets/f0d66cee-ef46-4fb0-a9d6-9297a68b2e20)
 - The drive for bigger models is propelled by performance gains, but this paper urges the NLP community to consider **potentially harmful consequences**—from environmental damage to social harm.
 
 ### Address the LSTF problem
