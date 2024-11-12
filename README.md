@@ -31,16 +31,14 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 2. The memory bottleneck in stacking layers for long inputs.
 3. The speed plunge in predicting long outputs.
 ### Challenge 1: Self-Attention Mechanism
-- [ ] (Complexity/layer)
 - ProbSparse self-attention mechanism
 ![image](https://github.com/user-attachments/assets/1171270e-edff-4669-9559-8133cb63f1ef)
-
+- [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
 ![image](https://github.com/user-attachments/assets/f7b9076b-adc6-412d-89c9-796bd9e6ab9e)
-
+- [x] (Long Input)
 ### Challenge 3: Generative-style Decoder Decoder
-
-
+- [x] (Long Output)
 
 ### 1. Environmental and Financial Costs
    - **Problem**: Training large LLMs is resource-intensive, demanding substantial energy, which results in significant **carbon emissions**. For example, training a single large model can emit as much CO₂ as several transcontinental flights.
