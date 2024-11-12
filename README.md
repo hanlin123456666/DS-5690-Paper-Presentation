@@ -4,14 +4,14 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 
 ## Introduction
 ### What is the main topic of this paper?
-Sequence prediction: a problem that involves using historical sequence information sequence information to predict the next value or values in the sequence. 
+- Sequence prediction: a problem that involves using historical sequence information sequence information to predict the next value or values in the sequence. 
 ![image](https://github.com/user-attachments/assets/ac8210e8-2c07-4dc6-aa12-1ef647297895)
 
 ### Problem and research questions
 - Problem 1. The challenge of Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data are always vast, high-frequency, and span extended periods.
 ![image](https://github.com/user-attachments/assets/f0d66cee-ef46-4fb0-a9d6-9297a68b2e20)
 - Problem 2. Long Sequence Input Learning (LSIL) refers to the task of processing and learning from long sequential data inputs, which is also challenging. It is not necessarily related to the LSTF problem but the literature tends to associate them.
-- While transformer models outperform RNNS in capturing long-range dependencies and reducing signal path length, their self-attention mechanism’s computational and memory complexity makes them resource-intensive and impractical for real-world LSTF applications!
+- Comparison with other models: While transformer models outperform RNNS in capturing long-range dependencies and reducing signal path length, their self-attention mechanism’s computational and memory complexity makes them resource-intensive and impractical for real-world LSTF applications!
 ![image](https://github.com/user-attachments/assets/4018da60-e61d-406f-8d6c-859ba788a50d)
 - Research questions: Can we improve Transformer models to be computation, memory, and architecture efficient, as well as maintain higher prediction capacity?
   
@@ -43,9 +43,6 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 #### Architecture
 Informer holds the encoder-decoder architecture while aiming to address the LSTF problem.
 ![image](https://github.com/user-attachments/assets/334ffc46-b7b1-4c41-8f76-b33bc057dfdc)
-
-
-#### Comparison with other model 
 
 ## Experiments
 ### 1. Datasets and Details 
