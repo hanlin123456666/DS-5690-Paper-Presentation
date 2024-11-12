@@ -45,15 +45,18 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 
 ## Experiments 
    - Datasets: 2 collected real-world datasets for LSTF and 2 public benchmark datasets.
-     1. ETT
-     2. ECL
-     3. Weather
-     4. 
+     1. ETT(Electricity Transformer Temperature): 2 stations, 2 years, every 15 minutes. Train/Val/Test is 1st year/ 4 months/ 8 months. 
+     2. ECL(Electricity Consuming Load): 1 country, 2 years, every 1 hour. Train/Val/Test is 15 months/ 3 months/ 6 months. 
+     3. Weather: 1600 US locations, 4 years, every 1 hour. Train/Val/Test is 28 months/ 10 months/ 10 months.
    - Baseline:
      1. time-series methods: ARIMA, DeepAR, Prophet, LSTMa, LSTnet
-     2. These costs disproportionately affect marginalized communities, who experience the worst effects of climate change yet often lack access to the benefits of these models.
-   - **Recommendations**:
-     - **Energy Efficiency**: The authors call for the development of energy-efficient AI, shifting the focus from model size to **sustainability as a key metric**.
+     2. transformer-based methods: vanilla Transformer, Reformer, LogSparse Transformer
+   - Metrics:
+     1. Mean Absolute Error (MAE)
+     2. Mean Squared Error (MSE)
+   - Platform:
+     One single Nvidia V100 GPU
+     
      - **Benchmarking Emissions**: Include energy usage and environmental impact in model evaluations, and encourage training in carbon-friendly regions.
 
 ### 2. Bias in Training Data
