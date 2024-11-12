@@ -32,7 +32,7 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 3. The speed plunge in predicting long outputs.
 ### Challenge 1: Self-Attention Mechanism
 - ProbSparse self-attention mechanism
-![image](https://github.com/user-attachments/assets/1171270e-edff-4669-9559-8133cb63f1ef)
+![image](https://github.com/user-attachments/assets/e31bf878-bebe-47c5-be74-acb55aa2fd28)
 - [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
 ![image](https://github.com/user-attachments/assets/f7b9076b-adc6-412d-89c9-796bd9e6ab9e)
@@ -40,9 +40,18 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 ### Challenge 3: Generative-style Decoder Decoder
 - [x] (Long Output)
 
-### 1. Environmental and Financial Costs
-   - **Problem**: Training large LLMs is resource-intensive, demanding substantial energy, which results in significant **carbon emissions**. For example, training a single large model can emit as much CO₂ as several transcontinental flights.
-   - **Impact**: These costs disproportionately affect marginalized communities, who experience the worst effects of climate change yet often lack access to the benefits of these models.
+### Summary of the model
+![image](https://github.com/user-attachments/assets/6b030b7d-fa63-4c63-b64e-762c94e7afe1)
+
+## Experiments 
+   - Datasets: 2 collected real-world datasets for LSTF and 2 public benchmark datasets.
+     1. ETT
+     2. ECL
+     3. Weather
+     4. 
+   - Baseline:
+     1. time-series methods: ARIMA, DeepAR, Prophet, LSTMa, LSTnet
+     2. These costs disproportionately affect marginalized communities, who experience the worst effects of climate change yet often lack access to the benefits of these models.
    - **Recommendations**:
      - **Energy Efficiency**: The authors call for the development of energy-efficient AI, shifting the focus from model size to **sustainability as a key metric**.
      - **Benchmarking Emissions**: Include energy usage and environmental impact in model evaluations, and encourage training in carbon-friendly regions.
