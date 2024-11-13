@@ -23,6 +23,10 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 - Self-Attention Distilling
 - Generative Decoder
 
+## Question 
+- Q: How does Informer balance efficiency and accuracy when forecasting long sequences?
+- A: Traditional self-attention has a computational and memory complexity. Long sequences require us to capture dependencies over hundreds or thousands of time steps. ProbSpase helps us!
+
 ## Methodology
 Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when solving the LSTF problem:
 1. The quadratic computation of self-attention.
@@ -31,16 +35,24 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 ### Challenge 1: Self-Attention Mechanism
 - ProbSparse self-attention mechanism
 ![image](https://github.com/user-attachments/assets/e31bf878-bebe-47c5-be74-acb55aa2fd28)
+It focuses on a sparse subset of dominant queries and identifies the most significant query-key pairs using a Kullback-Leibler divergence-based measurement. This sparsity assumption ensures efficient computation without affecting the quality of the attention mechanism.
 - [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
 ![image](https://github.com/user-attachments/assets/f7b9076b-adc6-412d-89c9-796bd9e6ab9e)
+It reduces the input sequence length by halving it at each layer, while preserving dominant attention features.
 - [x] (Long Input)
 ### Challenge 3: Generative-style Decoder Decoder
+It uses a masked multi-head ProbSparse self-attention and pre-padded input placeholders, the decoder eliminates the need for step-by-step predictions.
 - [x] (Long Output)
 
 ### Summary of the model
 #### Architecture
 Informer holds the encoder-decoder architecture while aiming to address the LSTF problem.
+- Encoder uses ProbSparse Self-Attention and distilling mechanism.
+- Decoder uses generative-style inference for efficient output generation.
+Mathematical Foundations:
+-  ProbSparse Self-Attention mechanism selects top queries based on Kullback-Leibler divergence.
+-  Self-attention distilling improves hierarchical encoding of long sequences.
 ![image](https://github.com/user-attachments/assets/334ffc46-b7b1-4c41-8f76-b33bc057dfdc)
 
 ## Experiments
@@ -85,49 +97,32 @@ Informer holds the encoder-decoder architecture while aiming to address the LSTF
   - 5. The authors replace the proposed decoder with dynamic decoding, and it gets worse results. Moreover, the generative style decoder can accurately predict the shifting horizon without retraining the entire model. 
   ![image](https://github.com/user-attachments/assets/8ab53ccd-7490-4887-926a-c2c80c92e824)
 
-### 2. Things to take 
-  - 3. Note that the Informer+ uses the canonical self-attention in the vanilla Transformer.
-  - 4. The authors remove the self-attention distilling from Informer+ as Informer++. Although it achieves better results when the horizon<720, it cannot handle longer inputs. For longer predictions, longer inputs are more important.
+## Takeaway
+  - 1. Long Sequence Forecasting problem is a long-standing problem.
+  - 2. The self-attention model is a doable solution to the time-series problem. **ProbSparse self-attention** allows an efficient self-attention, which is probabilistic and analyzable. **Self-attention Distilling Operation** reduces overheads, allowing for longer inputs. **Generative Style Decoder** allows for longer outputs, even arbitrary step predictions.
+  - 3. Sparsity hypothesis works on Self-attention remarkably.
+  - 4. Informer can bring substantial benefits to other domains such as long sequence generation of text, music, image and video. 
+
+## Impacts 
+The Informer model introduces an approach to long-sequence time-series forecasting and addresses efficiency and scalability issues.
+- **Enhanced Efficiency**: ProbSparse self-attention reduces computational complexity.
+- **Improved Forecasting Accuracy**: Informer has superior accuracy for both univariate and multivariate time-series data.
+- **Wider Applicability**: Informer can be applied in resource-constrained environments, helping various industries. 
 
 ## Critical Analysis
+- **Enhanced Efficiency**: The performance of the model may depend on the quality of data. Informer may require tuning for diverse datasets. In addition, the effectiveness of ProbSparse relies on the sparsity assumption in self-attention distributions, which is not applied to all datasets. 
+- **Memory Constraints in Extreme Cases**: Despite reducing complexity, Informer may have limitations in dealing with extremely large datasets or using deep layers since it may have memory limitations. 
 
-- **Overlooked Areas**: The authors highlight the lack of emphasis on **documentation and careful data curation**, suggesting that current practices ignore the long-term impacts of uncurated data.
-- **Limitations in Bias Detection**: Current bias detection tools often miss subtle, culturally specific forms of bias, making it essential to prioritize culturally aware, context-sensitive approaches.
-- **Field Debates**: The authors challenge the common view that increased model size inherently equates to better understanding, arguing instead for ethical considerations and alternative metrics for success.
-
-![image](https://github.com/user-attachments/assets/74bd6261-4e1a-4ba0-94f2-000afba52c71)
-
----
-
-## Impacts
-### Theoretical Impacts
-- The paper reshapes the way we view LLMs, emphasizing that **scale alone is not the ultimate goal** in NLP. It calls for a shift in research priorities to include sustainability, ethics, and inclusive data practices.
-
-### Practical Impacts
-- **Guidance for Model Development**: The paper’s recommendations, if implemented, could encourage **sustainable practices** in NLP research, making models more inclusive and accessible.
-- **Influence on Policy and Practice**: By prioritizing efficiency and ethical practices, this approach could guide companies and researchers to develop **socially responsible AI**.
-
-### Future Directions
-- **Green AI and Efficiency**: Emphasize **energy-efficient models** and evaluate models not only on accuracy but also on their environmental footprint.
-- **Improving Data Practices**: Curate datasets with representation in mind, ensuring that underrepresented voices are included and biases are mitigated.
-- **User Education and Awareness**: Educate users on LLM limitations to reduce overreliance on model outputs and curb automation bias.
-
-## Questions for Audience
-
-1. **How can we implement data curation and documentation to mitigate bias and ensure diversity in LLMs?**
-2. **What are the benefits and trade-offs of prioritizing energy efficiency and ethical standards over model scale in NLP research?**
+## Questions 
+1. How can we modify the model to handle multi-horizon forecasting where different time horizons require different levels of detail?
+Informer can be modified by incorporating a multi-scale attention mechanism to capture dependencies at different temporal resolutions.
 
 ## Resource Links
-
-1. Related Paper: Towards Climate Awareness in NLP Research [[Original Paper](https://doi.org/10.1145/3442188.3445922)](https://arxiv.org/abs/2205.05071)
-2. Related Paper: Evaluating the Environmental Impact of Large Language Models: Sustainable Approaches and Practices.
-   https://innovatesci-publishers.com/index.php/ICSJ/article/view/153
-3. Value-Sensitive Design Framework: An approach that integrates human values into the design process of technology. https://cseweb.ucsd.edu/~goguen/courses/271/friedman04.pdf 
-4. Green AI (more energy-efficient AI research practices) [[Schwartz et al., Green AI](https://arxiv.org/abs/1907.10597)](https://arxiv.org/abs/1907.10597)
-5. Medium Post: Code Green: Addressing the Environmental Impact of Language Models https://medium.com/darrowai/code-green-addressing-the-environmental-impact-of-language-models-0161eb790c21
+1. Related Paper: Time Series Analysis Based on Informer Algorithms: A Survey (https://www.mdpi.com/2073-8994/15/4/951)
+2. Related Paper: Stock and market index prediction using Informer network (https://arxiv.org/abs/2305.14382)
+3. Hugging face resource: https://huggingface.co/blog/informer
+4. Github source codes: https://github.com/zhouhaoyi/Informer2020
 
 ## Citation
-
-Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell. (2021). *On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?* Conference on Fairness, Accountability, and Transparency (FAccT ’21). [DOI: 10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)
-vannilla transformer 
+Zhou, Haoyi, et al. "Informer: Beyond efficient transformer for long sequence time-series forecasting." Proceedings of the AAAI conference on artificial intelligence. Vol. 35. No. 12. 2021.
 
