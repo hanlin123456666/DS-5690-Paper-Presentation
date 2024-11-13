@@ -112,7 +112,7 @@ The Informer model introduces an approach to long-sequence time-series forecasti
 ## Critical Analysis
 - **Enhanced Efficiency**: The performance of the model may depend on the quality of data. Informer may require tuning for diverse datasets. In addition, the effectiveness of ProbSparse relies on the sparsity assumption in self-attention distributions, which is not applied to all datasets. 
 - **Memory Constraints in Extreme Cases**: Despite reducing complexity, Informer may have limitations in dealing with extremely large datasets or using deep layers since it may have memory limitations. 
---**Data Noise and Irregular Sampling**: The authors did not extensively address how Informer performs on noisy or irregularly sampled time-series data. Incorporating denoising layers could be the next step. 
+- **Data Noise and Irregular Sampling**: The authors did not extensively address how Informer performs on noisy or irregularly sampled time-series data. Incorporating denoising layers could be the next step. 
   
 ## Questions 
 1. How can we modify the model to handle multi-horizon forecasting where different time horizons require different levels of detail?
