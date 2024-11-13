@@ -33,8 +33,8 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 2. The memory bottleneck in stacking layers for long inputs.
 3. The speed plunge in predicting long outputs.
 ### Challenge 1: Self-Attention Mechanism (ProbSparse self-attention mechanism)
-![image](https://github.com/user-attachments/assets/e31bf878-bebe-47c5-be74-acb55aa2fd28)
 It focuses on a sparse subset of dominant queries and identifies the most significant query-key pairs using a Kullback-Leibler divergence-based measurement. This sparsity assumption ensures efficient computation without affecting the quality of the attention mechanism.
+![image](https://github.com/user-attachments/assets/e31bf878-bebe-47c5-be74-acb55aa2fd28)
 - [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
 ![image](https://github.com/user-attachments/assets/f7b9076b-adc6-412d-89c9-796bd9e6ab9e)
@@ -49,7 +49,7 @@ It uses a masked multi-head ProbSparse self-attention and pre-padded input place
 Informer holds the encoder-decoder architecture while aiming to address the LSTF problem.
 - Encoder uses ProbSparse Self-Attention and distilling mechanism.
 - Decoder uses generative-style inference for efficient output generation.
-Mathematical Foundations:
+-  Mathematical Foundations:
 -  ProbSparse Self-Attention mechanism selects top queries based on Kullback-Leibler divergence.
 -  Self-attention distilling improves hierarchical encoding of long sequences.
 ![image](https://github.com/user-attachments/assets/334ffc46-b7b1-4c41-8f76-b33bc057dfdc)
