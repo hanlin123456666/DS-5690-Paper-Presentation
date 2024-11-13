@@ -25,7 +25,7 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 
 ## Question 
 - Q: How does Informer balance efficiency and accuracy when forecasting long sequences?
-- A: Traditional self-attention has a computational and memory complexity. Long sequences require us to capture dependencies over hundreds or thousands of time steps. ProbSpase helps us!
+- A: Traditional self-attention has a computational and memory complexity. Long sequences require us to capture dependencies over hundreds or thousands of time steps. ProbSparse helps us!
 
 ## Methodology
 Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when solving the LSTF problem:
