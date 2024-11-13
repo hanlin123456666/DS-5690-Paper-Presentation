@@ -101,12 +101,15 @@ Informer holds the encoder-decoder architecture while aiming to address the LSTF
 The Informer model introduces an approach to long-sequence time-series forecasting and addresses efficiency and scalability issues.
 - **Enhanced Efficiency**: ProbSparse self-attention reduces computational complexity.
 - **Improved Forecasting Accuracy**: Informer has superior accuracy for both univariate and multivariate time-series data.
-- **Wider Applicability**: Informer can be applied in resource-constrained environments, helping various industries. 
+- **Wider Applicability**: Informer can be applied in resource-constrained environments, helping various industries.
+- **Impact on the AI Landscape**: It revolutionizes the way self-attention is computed for long sequences. It reduces complexity to O(LlogL) and lays foundation for developing efficient models. 
+- **Influence on Present and Future work**: It intersects with recent improvements in Transformer models and inspires ongoing research into **efficient** AI models tailored for time-series data and other sequence modeling tasks,
 
 ## Critical Analysis
 - **Enhanced Efficiency**: The performance of the model may depend on the quality of data. Informer may require tuning for diverse datasets. In addition, the effectiveness of ProbSparse relies on the sparsity assumption in self-attention distributions, which is not applied to all datasets. 
 - **Memory Constraints in Extreme Cases**: Despite reducing complexity, Informer may have limitations in dealing with extremely large datasets or using deep layers since it may have memory limitations. 
-
+--**Data Noise and Irregular Sampling**: The authors did not extensively address how Informer performs on noisy or irregularly sampled time-series data. Incorporating denoising layers could be the next step. 
+  
 ## Questions 
 1. How can we modify the model to handle multi-horizon forecasting where different time horizons require different levels of detail?
 - Informer can be modified by incorporating a multi-scale attention mechanism to capture dependencies at different temporal resolutions.
@@ -116,6 +119,7 @@ The Informer model introduces an approach to long-sequence time-series forecasti
 2. Related Paper: Stock and market index prediction using Informer network (https://arxiv.org/abs/2305.14382)
 3. Hugging face resource: https://huggingface.co/blog/informer
 4. Github source codes: https://github.com/zhouhaoyi/Informer2020
+5. Youtube resources: https://www.youtube.com/watch?v=aETHYkoJeNY&t=351s
 
 ## Citation
 Zhou, Haoyi, et al. "Informer: Beyond efficient transformer for long sequence time-series forecasting." Proceedings of the AAAI conference on artificial intelligence. Vol. 35. No. 12. 2021.
