@@ -34,6 +34,7 @@ Vanilla Transformer (Vaswani et al. 2017) has three significant limitations when
 3. The speed plunge in predicting long outputs.
 ### Challenge 1: Self-Attention Mechanism (ProbSparse self-attention mechanism)
 It focuses on a sparse subset of dominant queries and identifies the most significant query-key pairs using a Kullback-Leibler divergence-based measurement. This sparsity assumption ensures efficient computation without affecting the quality of the attention mechanism.
+
 ![image](https://github.com/user-attachments/assets/e31bf878-bebe-47c5-be74-acb55aa2fd28)
 - [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
