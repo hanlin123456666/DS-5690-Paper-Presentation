@@ -5,7 +5,7 @@ Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, Wan
 ## Introduction
 ### What is the main topic of this paper?
 ![image](https://github.com/user-attachments/assets/ac8210e8-2c07-4dc6-aa12-1ef647297895)
-- Sequence prediction: a problem that involves using historical sequence information sequence information to predict the next value or values in the sequence. 
+- Sequence prediction: a problem that involves using historical sequence information to predict the next value or values in the sequence. 
 
 ### Problem and research questions
 - Problem 1. The challenge of Long Sequence Time-series Forecasting (LSTF) has not been well addressed in the time series analysis field for a long time. However, in real-world scenarios, time-series data are always vast, high-frequency, and span extended periods.
