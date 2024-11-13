@@ -69,23 +69,17 @@ Informer holds the encoder-decoder architecture while aiming to address the LSTF
    - Platform:
      One single Nvidia V100 GPU
 ### 2. Results and Analysis
-   - **Overall Results**: Univariate Time-series Forecasting**:
+   - **Overall Results**: Univariate Time-series Forecasting:
      1. The Informer greatly improves the inference performance.
      2. The Informer and its canonical degradation Informer+ show comparable performance and Informer beats Informer+ mostly in wining-counts.
      3. The Informer model shows significantly better results than time-series models.
      4. Our proposed methods achieve better results than Reformer and LogTrans.
   ![image](https://github.com/user-attachments/assets/5e33034e-9cde-41aa-bfbe-20d5b400dee5)
 
-   - **Overall Results**: Multivariate Time-series Forecasting**:
+   - **Overall Results**: Multivariate Time-series Forecasting:
      1. The Informer greatly improves the inference performance.
      2. The Informer and its canonical degradation Informer+ show comparable performence and Informer mostly in wining-counts.
   ![image](https://github.com/user-attachments/assets/f600a2d1-cf1b-455b-9965-70fd89bc8d03)
-
-  - **Overall Results**: LSTF with Granularity Consideration**:
-    ![image](https://github.com/user-attachments/assets/f7dc1023-b647-4bfa-a590-b3c87c3b0cc9)
-
-  - **Parameter Sensitivity**:
-    ![image](https://github.com/user-attachments/assets/1713f19c-e8b1-4ef6-918a-6bdef90a503a)
 
   - **Ablation Study**:
   - 1. The Informer can handle longer inputs than the vanilla Transformer (Informer+).
