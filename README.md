@@ -109,7 +109,7 @@ The Informer model introduces an approach to long-sequence time-series forecasti
 
 ## Questions 
 1. How can we modify the model to handle multi-horizon forecasting where different time horizons require different levels of detail?
-Informer can be modified by incorporating a multi-scale attention mechanism to capture dependencies at different temporal resolutions.
+- Informer can be modified by incorporating a multi-scale attention mechanism to capture dependencies at different temporal resolutions.
 
 ## Resource Links
 1. Related Paper: Time Series Analysis Based on Informer Algorithms: A Survey (https://www.mdpi.com/2073-8994/15/4/951)
