@@ -39,10 +39,10 @@ It focuses on a sparse subset of dominant queries and identifies the most signif
 - [x] (Complexity/layer)
 ### Challenge 2: Self-Attention Distilling Operation
 ![image](https://github.com/user-attachments/assets/f7b9076b-adc6-412d-89c9-796bd9e6ab9e)
-It reduces the input sequence length by halving it at each layer, while preserving dominant attention features.
+It reduces the input sequence length by halving it at each layer, while preserving dominant attention features. The result is a pyramid-like encoder structure that significantly reduces memory usage while maintaining the ability to capture long-term dependences.
 - [x] (Long Input)
 ### Challenge 3: Generative-style Decoder Decoder
-It uses a masked multi-head ProbSparse self-attention and pre-padded input placeholders, the decoder eliminates the need for step-by-step predictions.
+It uses a masked multi-head ProbSparse self-attention and pre-padded input placeholders, the decoder eliminates the need for step-by-step predictions. It predicts the entire output sequence in one forward pass.
 - [x] (Long Output)
 
 ### Summary of the model
@@ -52,7 +52,7 @@ Informer holds the encoder-decoder architecture while aiming to address the LSTF
 - Decoder uses generative-style inference for efficient output generation.
 -  Mathematical Foundations:
 -  ProbSparse Self-Attention mechanism selects top queries based on Kullback-Leibler divergence.
--  Self-attention distilling improves hierarchical encoding of long sequences.
+-  Self-attention distilling improves the hierarchical encoding of long sequences.
 ![image](https://github.com/user-attachments/assets/334ffc46-b7b1-4c41-8f76-b33bc057dfdc)
 
 ## Experiments
