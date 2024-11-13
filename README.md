@@ -95,7 +95,11 @@ Informer holds the encoder-decoder architecture while aiming to address the LSTF
   - 1. Long Sequence Forecasting problem is a long-standing problem.
   - 2. The self-attention model is a doable solution to the time-series problem. **ProbSparse self-attention** allows an efficient self-attention, which is probabilistic and analyzable. **Self-attention Distilling Operation** reduces overheads, allowing for longer inputs. **Generative Style Decoder** allows for longer outputs, even arbitrary step predictions.
   - 3. Sparsity hypothesis works on Self-attention remarkably.
-  - 4. Informer can bring substantial benefits to other domains such as long sequence generation of text, music, image and video. 
+  - 4. Informer can bring substantial benefits to other domains such as long sequence generation of text, music, image and video.
+
+### Question: 
+- What are the potential challenges in applying Informer’s sparse attention and generative decoding mechanisms to highly dynamic and real-time environments, such as stock market prediction or real-time video streaming?
+- Informer’s sparse attention relies on the sparsity assumption, which may struggle with rapidly shifting dependencies.
 
 ## Impacts 
 The Informer model introduces an approach to long-sequence time-series forecasting and addresses efficiency and scalability issues.
